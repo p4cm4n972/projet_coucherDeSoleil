@@ -45,8 +45,8 @@ window.onload = function()
      
     ctx.beginPath();
     ctx.arc(xSoleil, ySoleil, diametreSoleil/2, 0, Math.PI*2);
-    ctx.fill();
     ctx.fillStyle="rgb(255,255,0)";
+    ctx.fill();
     ctx.closePath();
 
     xSoleil -= vitesseX;
