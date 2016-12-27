@@ -16,28 +16,32 @@ window.onload = function()
     var myIntervalle = setInterval(animate, 1000/30);
 
 
-    //COORDONNEE SOLEIL
+    //COORDONNEE DEPART SOLEIL
     var diametreSoleil = 50;
     var diametreAnneau = 70;
     var xSoleil = 700+diametreSoleil/2;
     var ySoleil = 20+diametreSoleil/2;
-    var vitesseX = 3 ;
-    var vitesseY = 3;
+    var vitesseX = 2 ;
+    var vitesseY = 2;
+    var cielRgb0 = 119;
+    var cielRgb1 = 181;
+    var cielRgb2 = 254;
+    var croissance = 1;
 
 
     //FONCTION ANIMATION
     function animate(){ 
     //LE CIEL
     ctx.beginPath();
-    ctx.fillStyle = "rgb(119,181,254)";
-    ctx.fillRect (0,0,720,250);
+    ctx.fillStyle = "rgb(" + cielRgb0 +"," + cielRgb1 + "," + cielRgb2 +")";
+    ctx.fillRect (0,0,720,300);
     ctx.closePath();
     
 
     //LA PLAINE VERTE
     ctx.beginPath();
     ctx.fillStyle = "rgb(0,255,0)";
-    ctx.fillRect (0,250,720,110);
+    ctx.fillRect (0,300,720,60);
     ctx.closePath();
        
     //LE SOLEIL
@@ -51,12 +55,15 @@ window.onload = function()
 
     xSoleil -= vitesseX;
     ySoleil += vitesseY;
+    diametreSoleil += croissance;
+    cielRgb0 += 1;
+    
+    if(ySoleil+diametreSoleil/2 ==300 || xSoleil+diametreSoleil/2 == 300){
+        vitesseX = 0;
+        vitesseY = 0;
+        croissance = 0;
 
-   //ANNEAU DU SOLEIL
-   /* ctx.beginPath();
-    ctx.arc(xSoleil, ySoleil, diametreAnneau/2, 0, Math.PI*2);
-    ctx.fill();
-    ctx.fillStyle="rgba(255,255,0,.5)";*/
+    };
     };
 };
 
