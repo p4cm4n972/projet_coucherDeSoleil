@@ -1,2 +1,4 @@
 # projet_coucherDeSoleil
-animation coucher de soleil avec effets de lumieres
+Javascript, html3, css5, canvas
+https://p4cm4n972.github.io/projet_coucherDeSoleil/
+![imp screen](readme.png)
